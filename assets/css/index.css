@@ -1,0 +1,41 @@
+/**
+ * Estilos para index (requiere de MYTstrap.css)
+ * Creado por TheMarceloYT (https://github.com/TheMarceloYT)
+ */
+
+/* PANTALLA DE CARGA [INICIO] */
+
+loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--loader-z-index);
+  transition: opacity 0.3s ease;
+}
+
+loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+loader.tech-hidden {
+  display: none;
+}
+
+.loader-content {
+  text-align: center;
+  color: var(--bg-color-alt);
+  font-size: calc(var(--responsive-add) / 80);
+  justify-items: center;
+}
+
+.loader-img {
+  width: calc(var(--responsive-add) / 10);
+  height: auto;
+  margin: 15px 0px;
+}
+
+/* PANTALLA DE CARGA [FIN] */
