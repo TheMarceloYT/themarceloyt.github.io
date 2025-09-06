@@ -628,7 +628,7 @@ export class DataBase {
       dataLangDesc: "langMK9Reborn",
       sourceIMG: "/assets/images/proyectos/mk9reborn.webp",
       altIMG: "MK9 Reborn logo",
-      herramientas: ["php", "laravel", "mysql", "reverseing", "ghidra"],
+      herramientas: ["php", "laravel", "mysql", "reverseING", "ghidra"],
       sourceHerramientas: "/assets/images/herramientas/",
       sourceCodeLink: "https://github.com/TheMarceloYT/appArtistasUsm_laravel",
       privacy: "private",
