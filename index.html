@@ -1,286 +1,185 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="auto">
-  <!-- HEADERS [INICIO] -->
-  <head>
-    <meta charset="UTF-8" />
-    <title>Marcelo Escobar - portafolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./assets/images/logo_canal_rounded.webp" />
-    <script type="module" src="app/kernel.mjs"></script>
-    <link rel="stylesheet" href="assets/css/MYTstrap.css" />
-    <link rel="stylesheet" href="assets/css/index.css" />
-  </head>
-  <!-- HEADERS [FIN] -->
-  <body>
-    <!-- PANTALLA DE CARGA [INICIO] -->
-    <loader>
-      <div class="loader-content">
-        <img
-          class="loader-img"
-          src="assets/images/logo_canal_rounded.webp"
-          alt="TheMarceloYT logo"
-        />
-        <div class="spinner"></div>
-        <p id="loader-text">...</p>
-      </div>
-    </loader>
-    <!-- PANTALLA DE CARGA [FIN] -->
+	<!-- HEADERS [INICIO] -->
+	<head>
+		<meta charset="UTF-8" />
+		<title>Marcelo Escobar - portafolio</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="./assets/images/logo_canal_rounded.webp" />
+		<script type="module" src="app/kernel.mjs"></script>
+		<link rel="stylesheet" href="assets/css/MYTstrap.css" />
+		<link rel="stylesheet" href="assets/css/index.css" />
+	</head>
+	<!-- HEADERS [FIN] -->
+	<body>
+		<!-- PANTALLA DE CARGA [INICIO] -->
+		<loader>
+			<div class="loader-content">
+				<img class="loader-img" src="assets/images/logo_canal_rounded.webp" alt="TheMarceloYT logo" />
+				<div class="spinner"></div>
+				<p id="loader-text">...</p>
+			</div>
+		</loader>
+		<!-- PANTALLA DE CARGA [FIN] -->
 
-    <!-- NAVBAR [INICIO] -->
-    <nav class="navbar navbar-lg-expand bg-red px-lg-4">
-      <div class="responsive-container">
-        <!-- IMAGEN NAVBAR [INICIO] -->
-        <img
-          class="navbar-brand"
-          src="assets/images/logo_canal_rounded.webp"
-          alt="TheMarceloYT logo"
-        />
-        <!-- IMAGEN NAVBAR [FIN] -->
+		<!-- NAVBAR [INICIO] -->
+		<nav class="navbar navbar-lg-expand bg-red px-lg-4">
+			<div class="responsive-container">
+				<!-- IMAGEN NAVBAR [INICIO] -->
+				<img class="navbar-brand" src="assets/images/logo_canal_rounded.webp" alt="TheMarceloYT logo" />
+				<!-- IMAGEN NAVBAR [FIN] -->
 
-        <!-- NAVBAR TOGGLER [INICIO] -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#navbar-content"
-        >
-          <img
-            class="navbar-toggler-icon"
-            src="assets/images/navbar_toggler.webp"
-            alt="Navbar toggler"
-          />
-        </button>
-        <!-- NAVBAR TOGGLER [FIN] -->
+				<!-- NAVBAR TOGGLER [INICIO] -->
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-content">
+					<img class="navbar-toggler-icon" src="assets/images/navbar_toggler.webp" alt="Navbar toggler" />
+				</button>
+				<!-- NAVBAR TOGGLER [FIN] -->
 
-        <!-- NAVBAR BODY [INICIO] -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbar-content">
-          <!-- OFFCANVAS HEADER [INICIO] -->
-          <div class="offcanvas-header">
-            <button
-              type="button"
-              class="btn btn-close mu-1 mr-1"
-              data-bs-dismiss="offcanvas"
-            >
-              <img src="/assets/icons/btn_close.webp" />
-            </button>
-          </div>
-          <!-- OFFCANVAS HEADER [FIN] -->
+				<!-- NAVBAR BODY [INICIO] -->
+				<div class="offcanvas offcanvas-end" tabindex="-1" id="navbar-content">
+					<!-- OFFCANVAS HEADER [INICIO] -->
+					<div class="offcanvas-header">
+						<button type="button" class="btn btn-close mu-1 mr-1" data-bs-dismiss="offcanvas">
+							<img src="/assets/icons/btn_close.webp" />
+						</button>
+					</div>
+					<!-- OFFCANVAS HEADER [FIN] -->
 
-          <!-- OFFCANVAS BODY [INICIO] -->
-          <div class="offcanvas-body" id="menu-views">
-            <!-- NAVEGACIÓN [INICIO] -->
-            <li class="nav-item mx-lg-4">
-              <a
-                data-lang="langHome"
-                data-view="about"
-                class="nav-link"
-                href="#about"
-                >...</a
-              >
-            </li>
-            <li class="nav-item mx-lg-4">
-              <a
-                data-lang="langProjects"
-                data-view="projects"
-                class="nav-link"
-                href="#projects"
-                >...</a
-              >
-            </li>
-            <li class="nav-item mx-lg-4">
-              <a
-                data-lang="langContact"
-                data-view="contact"
-                class="nav-link"
-                href="#contact"
-                >...</a
-              >
-            </li>
-            <!-- NAVEGACIÓN [FIN] -->
+					<!-- OFFCANVAS BODY [INICIO] -->
+					<div class="offcanvas-body" id="menu-views">
+						<!-- NAVEGACIÓN [INICIO] -->
+						<li class="nav-item mx-lg-4">
+							<a data-lang="langHome" data-view="about" class="nav-link" href="#about">...</a>
+						</li>
+						<li class="nav-item mx-lg-4">
+							<a data-lang="langProjects" data-view="projects" class="nav-link" href="#projects">...</a>
+						</li>
+						<li class="nav-item mx-lg-4">
+							<a data-lang="langContact" data-view="contact" class="nav-link" href="#contact">...</a>
+						</li>
+						<!-- NAVEGACIÓN [FIN] -->
 
-            <!-- NAVBAR BUTTONS [INICIO] -->
-            <div class="nav-buttons">
-              <!-- DROPDOWN IDOMA [INICIO] -->
-              <dropdown>
-                <button class="dropdown-toggle">
-                  <img src="assets/icons/lang_icon.webp" alt="Idioma" />
-                </button>
-                <div class="dropdown-menu" id="dropdown-idioma">
-                  <!-- Aquí los idiomas de la app -->
-                  <button data-lang="langBtnEs" data-lang-selected="es">
-                    ...
-                  </button>
-                  <button data-lang="langBtnEn" data-lang-selected="en">
-                    ...
-                  </button>
-                </div>
-              </dropdown>
-              <!-- DROPDOWN IDOMA [FIN] -->
+						<!-- NAVBAR BUTTONS [INICIO] -->
+						<div class="nav-buttons">
+							<!-- DROPDOWN IDOMA [INICIO] -->
+							<dropdown>
+								<button class="dropdown-toggle">
+									<img src="assets/icons/lang_icon.webp" alt="Idioma" />
+								</button>
+								<div class="dropdown-menu" id="dropdown-idioma">
+									<!-- Aquí los idiomas de la app -->
+									<button data-lang="langBtnEs" data-lang-selected="es">...</button>
+									<button data-lang="langBtnEn" data-lang-selected="en">...</button>
+								</div>
+							</dropdown>
+							<!-- DROPDOWN IDOMA [FIN] -->
 
-              <!-- DROPDOWN TEMA [INICIO] -->
-              <dropdown>
-                <button class="dropdown-toggle">
-                  <img
-                    id="dropdown-theme-img"
-                    src="assets/icons/theme_icon.webp"
-                    alt="Tema"
-                  />
-                </button>
-                <div class="dropdown-menu" id="dropdown-theme">
-                  <!-- Aquí los temas de la app -->
-                  <!-- <button data-lang="themeAuto" data-theme="auto">...</button> -->
-                  <button data-lang="langThemeLight" data-theme="light">
-                    ...
-                  </button>
-                  <button data-lang="langThemeDark" data-theme="dark">
-                    ...
-                  </button>
-                </div>
-              </dropdown>
-              <!-- DROPDOWN TEMA [FIN] -->
-            </div>
-            <!-- NAVBAR BUTTONS [FIN] -->
-          </div>
-          <!-- OFFCANVAS BODY [FIN] -->
+							<!-- DROPDOWN TEMA [INICIO] -->
+							<dropdown>
+								<button class="dropdown-toggle">
+									<img id="dropdown-theme-img" src="assets/icons/theme_icon.webp" alt="Tema" />
+								</button>
+								<div class="dropdown-menu" id="dropdown-theme">
+									<!-- Aquí los temas de la app -->
+									<!-- <button data-lang="themeAuto" data-theme="auto">...</button> -->
+									<button data-lang="langThemeLight" data-theme="light">...</button>
+									<button data-lang="langThemeDark" data-theme="dark">...</button>
+								</div>
+							</dropdown>
+							<!-- DROPDOWN TEMA [FIN] -->
+						</div>
+						<!-- NAVBAR BUTTONS [FIN] -->
+					</div>
+					<!-- OFFCANVAS BODY [FIN] -->
 
-          <!-- OFFCANVAS FOOTER [INICIO] -->
-          <div class="offcanvas-footer md-4">
-            <!-- SOCIAL LINKS [INICIO] -->
-            <div class="social-links justify-content-center">
-              <!-- YT link [INICIO] -->
-              <div class="d-none" data-tooltip="yt">Youtube</div>
-              <a
-                class="p-0 mx-1"
-                href="https://www.youtube.com/@TheMarceloYT"
-                tooltip-target="yt"
-                target="_blank"
-              >
-                <img
-                  class="yt-icon border border-white"
-                  src="/assets/icons/yt_icon.webp"
-                  alt="Youtube logo"
-                />
-              </a>
-              <!-- YT link [FIN] -->
+					<!-- OFFCANVAS FOOTER [INICIO] -->
+					<div class="offcanvas-footer md-4">
+						<!-- SOCIAL LINKS [INICIO] -->
+						<div class="social-links justify-content-center">
+							<!-- YT link [INICIO] -->
+							<div class="d-none" data-tooltip="yt">Youtube</div>
+							<a class="p-0 mx-1" href="https://www.youtube.com/@TheMarceloYT" tooltip-target="yt" target="_blank">
+								<img class="yt-icon border border-white" src="/assets/icons/yt_icon.webp" alt="Youtube logo" />
+							</a>
+							<!-- YT link [FIN] -->
 
-              <!-- GITHUB link [INICIO] -->
-              <div class="d-none" data-tooltip="github">Github</div>
-              <a
-                class="p-0 mx-1"
-                href="https://github.com/TheMarceloYT"
-                tooltip-target="github"
-                target="_blank"
-              >
-                <img
-                  class="github-icon"
-                  src="/assets/icons/github_icon.webp"
-                  alt="Github logo"
-                />
-              </a>
-              <!-- GITHUB link [FIN] -->
+							<!-- GITHUB link [INICIO] -->
+							<div class="d-none" data-tooltip="github">Github</div>
+							<a class="p-0 mx-1" href="https://github.com/TheMarceloYT" tooltip-target="github" target="_blank">
+								<img class="github-icon" src="/assets/icons/github_icon.webp" alt="Github logo" />
+							</a>
+							<!-- GITHUB link [FIN] -->
 
-              <!-- LINKEDIN link [INICIO] -->
-              <div class="d-none" data-tooltip="linkedin">Linkedin</div>
-              <a
-                class="p-0 mx-1"
-                href="https://www.linkedin.com/in/marceloescobarv"
-                tooltip-target="linkedin"
-                target="_blank"
-              >
-                <img
-                  class="linkedin-icon"
-                  src="/assets/icons/linkedin_icon.webp"
-                  alt="Linkedin logo"
-                />
-              </a>
-              <!-- LINKEDIN link [FIN] -->
+							<!-- LINKEDIN link [INICIO] -->
+							<div class="d-none" data-tooltip="linkedin">Linkedin</div>
+							<a
+								class="p-0 mx-1"
+								href="https://www.linkedin.com/in/marceloescobarv"
+								tooltip-target="linkedin"
+								target="_blank"
+							>
+								<img class="linkedin-icon" src="/assets/icons/linkedin_icon.webp" alt="Linkedin logo" />
+							</a>
+							<!-- LINKEDIN link [FIN] -->
 
-              <!-- TWITCH link [INICIO] -->
-              <div class="d-none" data-tooltip="twitch">Twitch</div>
-              <a
-                class="p-0 mx-1"
-                href="https://www.twitch.tv/themarcelotwitch"
-                tooltip-target="twitch"
-                target="_blank"
-              >
-                <img
-                  class="twitch-icon"
-                  src="/assets/icons/twitch_icon.webp"
-                  alt="Twitch logo"
-                />
-              </a>
-              <!-- TWITCH link [FIN] -->
+							<!-- TWITCH link [INICIO] -->
+							<div class="d-none" data-tooltip="twitch">Twitch</div>
+							<a class="p-0 mx-1" href="https://www.twitch.tv/themarcelotwitch" tooltip-target="twitch" target="_blank">
+								<img class="twitch-icon" src="/assets/icons/twitch_icon.webp" alt="Twitch logo" />
+							</a>
+							<!-- TWITCH link [FIN] -->
 
-              <!-- DISCORD link [INICIO] -->
-              <div class="d-none" data-tooltip="discord">Discord</div>
-              <a
-                class="p-0 mx-1"
-                href="https://discord.com/invite/MDnuduJ"
-                tooltip-target="discord"
-                target="_blank"
-              >
-                <img
-                  class="discord-icon"
-                  src="/assets/icons/discord_icon.webp"
-                  alt="Discord logo"
-                />
-              </a>
-              <!-- DISCORD link [FIN] -->
-            </div>
-            <!-- SOCIAL LINKS [FIN] -->
-            <div class="offcanvas-footer-container d-flex">
-              <p data-lang="langOffcanvasFooterText">...</p>
-              <a
-                class="link link-white"
-                href="https://github.com/TheMarceloYT"
-                target="_blank"
-                >TheMarceloYT
-              </a>
-            </div>
-          </div>
-          <!-- OFFCANVAS FOOTER [FIN] -->
-        </div>
-        <!-- NAVBAR BODY [FIN] -->
-      </div>
-    </nav>
-    <!-- NAVBAR [FIN] -->
+							<!-- DISCORD link [INICIO] -->
+							<div class="d-none" data-tooltip="discord">Discord</div>
+							<a class="p-0 mx-1" href="https://discord.com/invite/MDnuduJ" tooltip-target="discord" target="_blank">
+								<img class="discord-icon" src="/assets/icons/discord_icon.webp" alt="Discord logo" />
+							</a>
+							<!-- DISCORD link [FIN] -->
+						</div>
+						<!-- SOCIAL LINKS [FIN] -->
+						<div class="offcanvas-footer-container d-flex">
+							<p data-lang="langOffcanvasFooterText">...</p>
+							<a class="link link-white" href="https://github.com/TheMarceloYT" target="_blank">TheMarceloYT </a>
+						</div>
+					</div>
+					<!-- OFFCANVAS FOOTER [FIN] -->
+				</div>
+				<!-- NAVBAR BODY [FIN] -->
+			</div>
+		</nav>
+		<!-- NAVBAR [FIN] -->
 
-    <!-- MODAL [INICIO] -->
-    <div id="mytstrapModal" class="modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-header">
-          <div class="modal-title">...</div>
-          <button class="btn btn-close" data-modal-close>
-            <img src="/assets/icons/btn_close.webp" />
-          </button>
-        </div>
-        <hr class="border-white" />
-        <div class="modal-body">...</div>
-        <div class="modal-footer">...</div>
-      </div>
-    </div>
-    <!-- MODAL [INICIO] -->
+		<!-- MODAL [INICIO] -->
+		<div id="mytstrapModal" class="modal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-header">
+					<div class="modal-title">...</div>
+					<button class="btn btn-close" data-modal-close>
+						<img src="/assets/icons/btn_close.webp" />
+					</button>
+				</div>
+				<hr class="border-white" />
+				<div class="modal-body">...</div>
+				<div class="modal-footer">...</div>
+			</div>
+		</div>
+		<!-- MODAL [INICIO] -->
 
-    <!-- CONTENIDO PRINCIPAL [INICIO] -->
-    <main class="m-4"></main>
-    <!-- CONTENIDO PRINCIPAL [FIN] -->
+		<!-- CONTENIDO PRINCIPAL [INICIO] -->
+		<main class="m-4"></main>
+		<!-- CONTENIDO PRINCIPAL [FIN] -->
 
-    <!-- PIE DE PÁGINA [INICIO] -->
-    <footer class="row p-2">
-      <div class="col-4 text-center align-content-center">
-        <p data-lang="langFooterTextAdvice">...</p>
-      </div>
+		<!-- PIE DE PÁGINA [INICIO] -->
+		<footer class="row p-2">
+			<div class="col-4 text-center align-content-center">
+				<p data-lang="langFooterTextAdvice">...</p>
+			</div>
 
-      <div class="col-4 d-flex ml-auto text-center align-items-center">
-        <p data-lang="langFooterTextReserved">...</p>
-        <a
-          class="link link-white"
-          href="https://github.com/TheMarceloYT"
-          target="_blank"
-          >TheMarceloYT
-        </a>
-      </div>
-    </footer>
-    <!-- PIE DE PÁGINA [FIN] -->
-  </body>
+			<div class="col-4 d-flex ml-auto text-center align-items-center">
+				<p data-lang="langFooterTextReserved">...</p>
+				<a class="link link-white" href="https://github.com/TheMarceloYT" target="_blank">TheMarceloYT </a>
+			</div>
+		</footer>
+		<!-- PIE DE PÁGINA [FIN] -->
+	</body>
 </html>

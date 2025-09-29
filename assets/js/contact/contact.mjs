@@ -18,87 +18,77 @@ import { Lang } from "../../../app/utilities/lang.mjs";
 import { MYTstrap } from "../MYTstrap.mjs";
 
 export class ContactJS {
-  // variables
-  static moreOpcionesElementName = "more-opciones-contact";
-  static contactFormID = "contact-form";
-  static contactFormContainerClass = "contact-form-container";
-  static dataLangContactSwitchName = "langContactSwitch";
+	// variables
+	static moreOpcionesElementName = "more-opciones-contact";
+	static contactFormID = "contact-form";
+	static contactFormContainerClass = "contact-form-container";
+	static dataLangContactSwitchName = "langContactSwitch";
 
-  /**
-   * Define el listener de cambio de lang para cambiar el form contact
-   */
-  static listenerChangeFormContact() {
-    const callback = () => {
-      // existe el form?
-      const formEl = Utils.getElementPorID(this.contactFormID);
-      if (!formEl) {
-        console.log(
-          `[ContactJS] No existe el elemento con ID "${this.contactFormID}"`
-        );
-        return;
-      }
+	/**
+	 * Define el listener de cambio de lang para cambiar el form contact
+	 */
+	static listenerChangeFormContact() {
+		const callback = () => {
+			// existe el form?
+			const formEl = Utils.getElementPorID(this.contactFormID);
+			if (!formEl) {
+				console.log(`[ContactJS] No existe el elemento con ID "${this.contactFormID}"`);
+				return;
+			}
 
-      // existe, definimos su src de acuerdo al lang
-      formEl.src = DataBase.formContacto[Lang.getLenguajeActualApp()].source;
-    };
-    const query = `[${Config.nameDataLang}="${this.dataLangContactSwitchName}"]`;
+			// existe, definimos su src de acuerdo al lang
+			formEl.src = DataBase.formContacto[Lang.getLenguajeActualApp()].source;
+		};
+		const query = `[${Config.nameDataLang}="${this.dataLangContactSwitchName}"]`;
 
-    // creo el observer para el form
-    Utils.watchTextChange(query, callback);
-  }
+		// creo el observer para el form
+		Utils.watchTextChange(query, callback);
+	}
 
-  /**
-   * Define el listener de la carga del form contact
-   */
-  static initLoaderFormContact() {
-    // existe el elemento?
-    const formContainer = Utils.doDocumentQuery(
-      `.${this.contactFormContainerClass}`
-    );
-    if (!formContainer) {
-      console.log(
-        `[ContactJS] No existe el elemento "${this.contactFormContainerClass}"`
-      );
-      return;
-    }
+	/**
+	 * Define el listener de la carga del form contact
+	 */
+	static initLoaderFormContact() {
+		// existe el elemento?
+		const formContainer = Utils.doDocumentQuery(`.${this.contactFormContainerClass}`);
+		if (!formContainer) {
+			console.log(`[ContactJS] No existe el elemento "${this.contactFormContainerClass}"`);
+			return;
+		}
 
-    // existe el form?
-    const formElement = Utils.getElementPorID(this.contactFormID);
-    if (!formElement) {
-      console.log(
-        `[ContactJS] No existe el elemento con ID "${this.contactFormID}"`
-      );
-      return;
-    }
+		// existe el form?
+		const formElement = Utils.getElementPorID(this.contactFormID);
+		if (!formElement) {
+			console.log(`[ContactJS] No existe el elemento con ID "${this.contactFormID}"`);
+			return;
+		}
 
-    // existe, lo pongo en estado de carga
-    const loaderID = `${this.contactFormID}-loader`;
-    MYTstrap.doLoading("add", formContainer, loaderID);
+		// existe, lo pongo en estado de carga
+		const loaderID = `${this.contactFormID}-loader`;
+		MYTstrap.doLoading("add", formContainer, loaderID);
 
-    // listener de cuando el form cargue por completo
-    formElement.addEventListener("load", () => {
-      MYTstrap.doLoading("remove", formContainer);
-    });
-  }
+		// listener de cuando el form cargue por completo
+		formElement.addEventListener("load", () => {
+			MYTstrap.doLoading("remove", formContainer);
+		});
+	}
 
-  /**
-   * Define el HTML para la sección "más opciones de contacto"
-   */
-  static initMoreOptionsContact() {
-    // existe el elemento?
-    const moreOpcEl = Utils.doDocumentQuery(this.moreOpcionesElementName);
-    if (!moreOpcEl) {
-      console.log(
-        `[ContactJS] No existe el elemento "${this.moreOpcionesElementName}"`
-      );
-      return;
-    }
+	/**
+	 * Define el HTML para la sección "más opciones de contacto"
+	 */
+	static initMoreOptionsContact() {
+		// existe el elemento?
+		const moreOpcEl = Utils.doDocumentQuery(this.moreOpcionesElementName);
+		if (!moreOpcEl) {
+			console.log(`[ContactJS] No existe el elemento "${this.moreOpcionesElementName}"`);
+			return;
+		}
 
-    // existe, defino su HTML
-    const opcContacto = DataBase.opcContacto;
-    let html = "";
-    Object.values(opcContacto).forEach((opc) => {
-      const opcHTML = `
+		// existe, defino su HTML
+		const opcContacto = DataBase.opcContacto;
+		let html = "";
+		Object.values(opcContacto).forEach((opc) => {
+			const opcHTML = `
         <div class="col-auto">
           <div class="d-none" ${Config.nameDataLang}="${opc.dataLang}" ${Config.nameDataTooltip}="${opc.dataToolTip}">...</div>
           <a class="icons-link" href="${opc.href}" target="_blank" ${Config.nameTooltipTarget}="${opc.tooltipTarget}">
@@ -107,22 +97,22 @@ export class ContactJS {
         </div>
       `;
 
-      // agrego el HTML
-      html += opcHTML;
-    });
-    moreOpcEl.innerHTML = `
+			// agrego el HTML
+			html += opcHTML;
+		});
+		moreOpcEl.innerHTML = `
       <div class="row justify-content-center">
         ${html}
       </div>
     `;
-  }
+	}
 
-  /**
-   * Iniciliza todo el JS para la vista CONTACT
-   */
-  static init() {
-    this.listenerChangeFormContact();
-    this.initLoaderFormContact();
-    this.initMoreOptionsContact();
-  }
+	/**
+	 * Iniciliza todo el JS para la vista CONTACT
+	 */
+	static init() {
+		this.listenerChangeFormContact();
+		this.initLoaderFormContact();
+		this.initMoreOptionsContact();
+	}
 }

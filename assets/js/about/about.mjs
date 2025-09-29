@@ -18,32 +18,30 @@ import { MYTstrap } from "../MYTstrap.mjs";
 import { Lang } from "../../../app/utilities/lang.mjs";
 
 export class AboutJS {
-  // variables
-  static certificadosElementName = "certificados";
-  static infoWebElementName = "info-web";
-  static herramientasElementName = "herramientas";
-  static aboutBtnModalOpenName = `${Config.nameDataModalOpen}-about`;
+	// variables
+	static certificadosElementName = "certificados";
+	static infoWebElementName = "info-web";
+	static herramientasElementName = "herramientas";
+	static aboutBtnModalOpenName = `${Config.nameDataModalOpen}-about`;
 
-  /**
-   * Define el HTML para la sección de HERRAMIENTAS
-   */
-  static initHerramientasSection() {
-    // variables
-    const herramientasEl = Utils.doDocumentQuery(this.herramientasElementName);
-    const herramientas = DataBase.herramientasSection;
-    let html = "";
+	/**
+	 * Define el HTML para la sección de HERRAMIENTAS
+	 */
+	static initHerramientasSection() {
+		// variables
+		const herramientasEl = Utils.doDocumentQuery(this.herramientasElementName);
+		const herramientas = DataBase.herramientasSection;
+		let html = "";
 
-    // existe el elemento?
-    if (!herramientasEl) {
-      console.log(
-        `[AboutJS] No existe el elemento "${this.herramientasElementName}"`
-      );
-      return;
-    }
+		// existe el elemento?
+		if (!herramientasEl) {
+			console.log(`[AboutJS] No existe el elemento "${this.herramientasElementName}"`);
+			return;
+		}
 
-    // existe, defino el html de la sección
-    Object.values(herramientas).forEach((h) => {
-      const herramientaHTML = `
+		// existe, defino el html de la sección
+		Object.values(herramientas).forEach((h) => {
+			const herramientaHTML = `
         <div class="d-none" ${Config.nameDataLang}="${h.dataLang}" ${Config.nameDataTooltip}="${h.dataTooltip}">...</div>
           <img
             class="herramientas-img col"
@@ -53,37 +51,35 @@ export class AboutJS {
           />
         `;
 
-      // añado al html que será insertado
-      html += herramientaHTML;
-    });
+			// añado al html que será insertado
+			html += herramientaHTML;
+		});
 
-    // inserto el HTML
-    herramientasEl.innerHTML = html;
-  }
+		// inserto el HTML
+		herramientasEl.innerHTML = html;
+	}
 
-  /**
-   * Inicializa el listener para abrir modal para certificados
-   * @param {Object} certificado - Objeto con la información del certificado
-   */
-  static initModalOpenListener(certificado) {
-    const certificadoEl = Utils.getElementPorID(certificado.id);
+	/**
+	 * Inicializa el listener para abrir modal para certificados
+	 * @param {Object} certificado - Objeto con la información del certificado
+	 */
+	static initModalOpenListener(certificado) {
+		const certificadoEl = Utils.getElementPorID(certificado.id);
 
-    // existe el elemento?
-    if (!certificadoEl) {
-      console.log(`[AboutJS] No existe el elemento con ID "${certificado.id}"`);
-      return;
-    }
+		// existe el elemento?
+		if (!certificadoEl) {
+			console.log(`[AboutJS] No existe el elemento con ID "${certificado.id}"`);
+			return;
+		}
 
-    // obtengo el btn para abrir del modal con la info del cert
-    const btnOpenModalCert = certificadoEl.querySelector(
-      `[${this.aboutBtnModalOpenName}]`
-    );
+		// obtengo el btn para abrir del modal con la info del cert
+		const btnOpenModalCert = certificadoEl.querySelector(`[${this.aboutBtnModalOpenName}]`);
 
-    // defino el HTML del modal
-    const modalTitle = `
+		// defino el HTML del modal
+		const modalTitle = `
       <h2 ${Config.nameDataLang}="${certificado.dataLangTitle}">...</h2>
     `;
-    const modalBody = `
+		const modalBody = `
       <div class="usm-cert-img-modal-container pu-3 mx-auto">
         <img
           class="usm-cert-img-modal zoomable"
@@ -92,39 +88,37 @@ export class AboutJS {
         />
       </div>
     `;
-    const modalFooter = `<div></div>`;
+		const modalFooter = `<div></div>`;
 
-    // defino el listener para el btn certificado
-    btnOpenModalCert.addEventListener("click", () => {
-      MYTstrap.showModal(modalTitle, modalBody, modalFooter);
+		// defino el listener para el btn certificado
+		btnOpenModalCert.addEventListener("click", () => {
+			MYTstrap.showModal(modalTitle, modalBody, modalFooter);
 
-      // actualizo lang individual
-      Lang.updateElementLang(certificadoEl.id);
+			// actualizo lang individual
+			Lang.updateElementLang(certificadoEl.id);
 
-      // activo la img zoomable
-      MYTstrap.initZoomInImgs();
-    });
-  }
+			// activo la img zoomable
+			MYTstrap.initZoomInImgs();
+		});
+	}
 
-  /**
-   * Define el HTML para la sección de CERTIFICADOS
-   */
-  static initCertificadosSection() {
-    const certificadosEl = Utils.doDocumentQuery(this.certificadosElementName);
-    const certificados = DataBase.certificadosSection;
-    let html = "";
+	/**
+	 * Define el HTML para la sección de CERTIFICADOS
+	 */
+	static initCertificadosSection() {
+		const certificadosEl = Utils.doDocumentQuery(this.certificadosElementName);
+		const certificados = DataBase.certificadosSection;
+		let html = "";
 
-    // existe el elemento?
-    if (!certificadosEl) {
-      console.log(
-        `[AboutJS] No existe el elemento "${this.certificadosElementName}"`
-      );
-      return;
-    }
+		// existe el elemento?
+		if (!certificadosEl) {
+			console.log(`[AboutJS] No existe el elemento "${this.certificadosElementName}"`);
+			return;
+		}
 
-    // existe, defino html de la sección
-    Object.values(certificados).forEach((c) => {
-      const certificadoHTML = `
+		// existe, defino html de la sección
+		Object.values(certificados).forEach((c) => {
+			const certificadoHTML = `
         <div class="d-none" ${Config.nameDataLang}="${c.dataLangIcon}" ${Config.nameDataTooltip}="${c.dataToolTip}">...</div>
         <div id="${c.id}" class="row my-2">
 
@@ -156,24 +150,24 @@ export class AboutJS {
         </div>
       `;
 
-      // añado al html que será insertado
-      html += certificadoHTML;
-    });
+			// añado al html que será insertado
+			html += certificadoHTML;
+		});
 
-    // inserto el HTML
-    certificadosEl.innerHTML = html;
+		// inserto el HTML
+		certificadosEl.innerHTML = html;
 
-    // inicio los listener de los btn abrir modal con info
-    Object.values(certificados).forEach((c) => {
-      this.initModalOpenListener(c);
-    });
-  }
+		// inicio los listener de los btn abrir modal con info
+		Object.values(certificados).forEach((c) => {
+			this.initModalOpenListener(c);
+		});
+	}
 
-  /**
-   * Iniciliza todo el JS para la vista ABOUT
-   */
-  static init() {
-    this.initHerramientasSection();
-    this.initCertificadosSection();
-  }
+	/**
+	 * Iniciliza todo el JS para la vista ABOUT
+	 */
+	static init() {
+		this.initHerramientasSection();
+		this.initCertificadosSection();
+	}
 }

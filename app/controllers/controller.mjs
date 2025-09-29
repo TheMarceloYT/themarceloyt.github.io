@@ -15,10 +15,10 @@ import { Utils } from "../utilities/utilities.mjs";
 /* IMPORTS [FIN] */
 
 export class Controller {
-  // constructor
-  constructor() {
-    // definimos las clases a utilizar
-    this.utils = Utils;
-    this.config = Config;
-  }
+	// constructor
+	constructor() {
+		// definimos las clases a utilizar
+		this.utils = Utils;
+		this.config = Config;
+	}
 }

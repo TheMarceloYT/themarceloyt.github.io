@@ -12,49 +12,45 @@ import { DataBase } from "../../../app/database/database.mjs";
 import { Config } from "../../../app/config/app.mjs";
 
 export class ProjectsJS {
-  // variables
-  static projectsElementName = "projects";
+	// variables
+	static projectsElementName = "projects";
 
-  /**
-   * Define el HTML para la sección de PROYECTOS
-   */
-  static initProyectosSection() {
-    // variables
-    const proyectosEl = Utils.doDocumentQuery(this.projectsElementName);
-    const proyectos = DataBase.proyectosSection;
-    let html = "";
+	/**
+	 * Define el HTML para la sección de PROYECTOS
+	 */
+	static initProyectosSection() {
+		// variables
+		const proyectosEl = Utils.doDocumentQuery(this.projectsElementName);
+		const proyectos = DataBase.proyectosSection;
+		let html = "";
 
-    // existe el elemento?
-    if (!proyectosEl) {
-      console.log(
-        `[ProjectsJS] No existe el elemento "${this.projectsElementName}"`
-      );
-      return;
-    }
+		// existe el elemento?
+		if (!proyectosEl) {
+			console.log(`[ProjectsJS] No existe el elemento "${this.projectsElementName}"`);
+			return;
+		}
 
-    // existe, defino el html de la sección
-    Object.values(proyectos).forEach((p) => {
-      // obtengo todos los iconos de herramientas usadas
-      let herrameintasUsadas = "";
-      p.herramientas.forEach((h) => {
-        herrameintasUsadas += `
+		// existe, defino el html de la sección
+		Object.values(proyectos).forEach((p) => {
+			// obtengo todos los iconos de herramientas usadas
+			let herrameintasUsadas = "";
+			p.herramientas.forEach((h) => {
+				herrameintasUsadas += `
           <div class="icon-container">
-            <div class="d-none" ${
-              Config.nameDataLang
-            }="lang${h.toUpperCase()}" ${
-          Config.nameDataTooltip
-        }="${h}">...</div>
-            <img class="icon" src="${
-              p.sourceHerramientas
-            }${h}_logo.webp" alt="${h} logo" ${Config.nameTooltipTarget}="${h}">
+            <div class="d-none" ${Config.nameDataLang}="lang${h.toUpperCase()}" ${
+					Config.nameDataTooltip
+				}="${h}">...</div>
+            <img class="icon" src="${p.sourceHerramientas}${h}_logo.webp" alt="${h} logo" ${
+					Config.nameTooltipTarget
+				}="${h}">
           </div>
         `;
-      });
+			});
 
-      // obtengo el link al código fuente (si es público)
-      let htmlSourceCode = "";
-      if (p.privacy === "public")
-        htmlSourceCode += `
+			// obtengo el link al código fuente (si es público)
+			let htmlSourceCode = "";
+			if (p.privacy === "public")
+				htmlSourceCode += `
           <a class="btn btn-red p-2 mu-auto align-self-center"
             href="${p.sourceCodeLink}"
             target="_blank">
@@ -64,18 +60,18 @@ export class ProjectsJS {
             </div>
           </a>
         `;
-      // proyecto privado
-      else
-        htmlSourceCode += `
+			// proyecto privado
+			else
+				htmlSourceCode += `
           <h4 class="mu-auto p-2 align-self-center bg-red rounded" 
             ${Config.nameDataLang}="langProjectPrivacy">
             ...
           </h4>
       `;
 
-      // creo el HTML
-      const projectState = DataBase.proyectosState[p.state];
-      const proyectosHTML = `
+			// creo el HTML
+			const projectState = DataBase.proyectosState[p.state];
+			const proyectosHTML = `
         <div class="card">
           <div class="card-left">
             <div class="d-flex">
@@ -95,18 +91,18 @@ export class ProjectsJS {
         </div>
       `;
 
-      // añado al html que será insertado
-      html += proyectosHTML;
-    });
+			// añado al html que será insertado
+			html += proyectosHTML;
+		});
 
-    // inserto el HTML
-    proyectosEl.innerHTML = html;
-  }
+		// inserto el HTML
+		proyectosEl.innerHTML = html;
+	}
 
-  /**
-   * Iniciliza todo el JS para la vista PROJECTS
-   */
-  static init() {
-    this.initProyectosSection();
-  }
+	/**
+	 * Iniciliza todo el JS para la vista PROJECTS
+	 */
+	static init() {
+		this.initProyectosSection();
+	}
 }

@@ -14,12 +14,12 @@ import { Lang } from "./utilities/lang.mjs";
 
 // DOM loader
 document.addEventListener("DOMContentLoaded", function () {
-  // inicio toda la app
-  init();
+	// inicio toda la app
+	init();
 });
 
 // inicializador de métodos para la vista
 function init() {
-  // aplico el idioma a la vista
-  Lang.applyIdioma(Lang.detectIdioma());
+	// aplico el idioma a la vista
+	Lang.applyIdioma(Lang.detectIdioma());
 }
