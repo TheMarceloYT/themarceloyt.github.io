@@ -92,7 +92,7 @@ export class ContactJS {
         <div class="col-auto">
           <div class="d-none" ${Config.nameDataLang}="${opc.dataLang}" ${Config.nameDataTooltip}="${opc.dataToolTip}">...</div>
           <a class="icons-link" href="${opc.href}" target="_blank" ${Config.nameTooltipTarget}="${opc.tooltipTarget}">
-            <img class="icons ml-2" src="${opc.sourceIMG}" alt="${opc.altIMG}" />
+            <img loading="lazy" class="icons ml-2" src="${opc.sourceIMG}" alt="${opc.altIMG}" />
           </a>
         </div>
       `;

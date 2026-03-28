@@ -106,7 +106,8 @@ export class Router {
 			await this.aboutControllerObj.index();
 
 			// marco la view activa
-			this.markActiveView("about");
+			const aboutRouteName = Config.supportedViews[0];
+			this.markActiveView(aboutRouteName);
 			return;
 		}
 		// no existe el controller definido, suelta la pág. 404

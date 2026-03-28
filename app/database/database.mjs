@@ -25,22 +25,22 @@ export class DataBase {
 			/* INDEX [FIN] */
 
 			/* ABOUT [INICIO] */
-			langPfpText: `Desarrollador full-stack con sólida base en programación y especial enfoque 
-      en back-end. Me caracterizo por la responsabilidad, proactividad y capacidad de adaptación, 
+			langPfpText: `<b>Desarrollador full-stack</b> con sólida base en programación y especial enfoque 
+      en <b>back-end</b>. Me caracterizo por la <b>responsabilidad</b>, <b>proactividad</b> y <b>capacidad de adaptación</b>, 
       además de un alto compromiso con el trabajo en equipo. Apasionado por la tecnología y el aprendizaje 
-      continuo, busco aportar valor a proyectos de desarrollo de software y crecer profesionalmente en el área.`,
+      continuo, busco aportar <b>valor</b> a proyectos de desarrollo de software y <b>crecer profesionalmente</b> en el área.`,
 			langAboutHabilidades: "Habilidades",
-			langSkillUno: `Programación y desarrollo: Algoritmos y estructuras de datos, análisis y diseño de 
+			langSkillUno: `<b>Programación y desarrollo:</b> Algoritmos y estructuras de datos, análisis y diseño de 
       sistemas, desarrollo web, aplicaciones móviles y software de escritorio.`,
-			langSkillDos: `Tecnologías y herramientas: Python, bases de datos, Git, desarrollo en la nube y 
+			langSkillDos: `<b>Tecnologías y herramientas:</b> Python, bases de datos, Git, desarrollo en la nube y 
       inteligencia artificial.`,
-			langSkillTres: `Sistemas: Operativos, arquitecturas de software y entornos de computación.`,
-			langSkillCuatro: `Ingeniería inversa: Decodificación a juego de consola para desarrollo de servidor 
+			langSkillTres: `<b>Sistemas:</b> Operativos, arquitecturas de software y entornos de computación.`,
+			langSkillCuatro: `<b>Ingeniería inversa:</b> Decodificación a juego de consola para desarrollo de servidor 
       privado y personalizado.`,
-			langSkillCinco: "Videojuegos: Desarrollo de videojuegos en Godot Engine.",
-			langSkillSeis: `Liderazgo: Liderar equipos de competición en videojuegos, equipos TI en ingeniería inversa y 
+			langSkillCinco: "<b>Videojuegos:</b> Desarrollo de videojuegos en Godot Engine.",
+			langSkillSeis: `<b>Liderazgo:</b> Liderar equipos de competición en videojuegos, equipos TI en ingeniería inversa y 
       desarrollo de backend y equipos de administración en Discord.`,
-			langSkillSiete: `Blandas: Resolución de problemas, Pensamiento crítico, Creatividad, 
+			langSkillSiete: `<b>Blandas:</b> Resolución de problemas, Pensamiento crítico, Creatividad, 
       Innovación, Liderazgo, Motivación, Trabajo en equipo, Adaptabilidad, Flexibilidad, 
       Organización, Planificación, Autodisciplina, Responsabilidad, Compromiso, Proactividad, 
       Toma de decisiones, Manejo de conflictos, Ética profesional, Aprendizaje continuo, 
@@ -93,7 +93,7 @@ export class DataBase {
       de organización de carpetas y código limpio, lo que facilita su mantenimiento y extensión.`,
 			langDescInfoWebDos: `El repositorio cuenta con licencia, lo que permite a empresas o desarrolladores de conversar sobre la 
       adopción de esta misma estructura para proyectos comerciales o la contratación de servicios para 
-      implementar soluciones personalizadas con este modelo:`,
+      implementar soluciones personalizadas con este modelo.`,
 			langDescUno: `Arquitectura MVC nativa implementada en vanilla JS.`,
 			langDescDos: `Sistema de enrutamiento propio, permitiendo navegación SPA sin frameworks.`,
 			langDescTres: `Organización profesional de carpetas (separación clara de vistas, modelos y controladores).`,
@@ -119,9 +119,10 @@ export class DataBase {
 			langReinventing: "Reinventando",
 			langDeveloping: "Desarrollando",
 			langPending: "Pendiente",
-			langHerrUsadas: "Herramientas usadas:",
+			langHerrUsadas: "<b>Herramientas usadas:</b>",
 			langProjectCode: "Ir al código fuente",
 			langProjectPrivacy: "Proyecto privado",
+			langProjectWeb: "Ir a la web",
 			langGlobiDesc: `Aplicación de mensajería instantánea diseñada para conectar al mundo de forma rápida, 
       segura y sencilla. Con una interfaz moderna e intuitiva, ofrece una experiencia de comunicación sin 
       límites pensada para usuarios que valoran tanto la privacidad como la velocidad en sus conversaciones. 
@@ -191,23 +192,23 @@ export class DataBase {
 			/* INDEX [FIN] */
 
 			/* ABOUT [INICIO] */
-			langPfpText: `Full-stack developer with a solid background in programming and a special focus 
-      on the back-end. I'm characterized by responsibility, proactivity, and adaptability, as well as 
+			langPfpText: `<b>Full-stack developer</b> with a solid background in programming and a special focus 
+      on the <b>back-end</b>. I'm characterized by <b>responsibility</b>, <b>proactivity</b>, and <b>adaptability</b>, as well as 
       a strong commitment to teamwork. Passionate about technology and continuous learning, I seek to 
-      add value to software development projects and grow professionally in the field.`,
+      add <b>value</b> to software development projects and <b>grow professionally</b> in the field.`,
 			langAboutHabilidades: "Skills",
-			langSkillUno: `Programming and development: Algorithms and data structures, systems analysis and design, 
+			langSkillUno: `<b>Programming and development:</b> Algorithms and data structures, systems analysis and design, 
       web development, mobile applications and desktop software.`,
-			langSkillDos: `Technologies and tools: Python, databases, Git, cloud development and artificial intelligence.`,
-			langSkillTres: `Systems: Operating systems, software architectures and computing environments.`,
-			langSkillCuatro: `Reverse Engineering: Decoding a console game for private and custom server development.`,
-			langSkillCinco: "Video games: Video game development in Godot Engine.",
-			langSkillSeis: `Leadership: Leading competitive gaming teams, IT teams in reverse engineering and backend 
+			langSkillDos: `<b>Technologies and tools:</b> Python, databases, Git, cloud development and artificial intelligence.`,
+			langSkillTres: `<b>Systems:</b> Operating systems, software architectures and computing environments.`,
+			langSkillCuatro: `<b>Reverse Engineering:</b> Decoding a console game for private and custom server development.`,
+			langSkillCinco: "<b>Video games:</b> Video game development in Godot Engine.",
+			langSkillSeis: `<b>Leadership:</b> Leading competitive gaming teams, IT teams in reverse engineering and backend 
       development and administration teams at Discord.`,
-			langSkillSiete: `Soft: Problem-solving, Critical thinking, Creativity, Innovation, Leadership, 
+			langSkillSiete: `<b>Soft:</b> Problem-solving, Critical thinking, Creativity, Innovation, Leadership, 
       Motivation, Teamwork, Adaptability, Flexibility, Organization, Planning, Self-discipline, Responsibility, 
       Commitment, Proactivity, Decision-making, Conflict management, Professional ethics, Continuous learning, 
-      Curiosity, and Pressure management:`,
+      Curiosity, and Pressure management.`,
 			langAboutHerramientas: "Tools",
 			langC: "C",
 			langCPP: "C++",
@@ -282,9 +283,10 @@ export class DataBase {
 			langReinventing: "Reinventing",
 			langDeveloping: "Developing",
 			langPending: "Pending",
-			langHerrUsadas: "Used tools:",
+			langHerrUsadas: "<b>Used tools:</b>",
 			langProjectCode: "Go to source code",
 			langProjectPrivacy: "Private project",
+			langProjectWeb: "Go to web",
 			langGlobiDesc: `Instant messaging app designed to connect the world quickly, securely, and easily. With a 
       modern and intuitive interface, it offers a seamless communication experience designed for users who value 
       both privacy and speed in their conversations. It allows users to chat in real time with contacts without 
@@ -621,7 +623,7 @@ export class DataBase {
 		},
 		mk9reborn: {
 			id: "projectMK9Reborn",
-			state: "developing",
+			state: "pending",
 			title: "MK9 REBORN",
 			dataLangDesc: "langMK9Reborn",
 			sourceIMG: "/assets/images/proyectos/mk9reborn.webp",

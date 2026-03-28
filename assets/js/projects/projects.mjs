@@ -19,18 +19,16 @@ export class ProjectsJS {
 	 * Define el HTML para la sección de PROYECTOS
 	 */
 	static initProyectosSection() {
-		// variables
-		const proyectosEl = Utils.doDocumentQuery(this.projectsElementName);
-		const proyectos = DataBase.proyectosSection;
-		let html = "";
-
 		// existe el elemento?
+		const proyectosEl = Utils.doDocumentQuery(this.projectsElementName);
 		if (!proyectosEl) {
 			console.log(`[ProjectsJS] No existe el elemento "${this.projectsElementName}"`);
 			return;
 		}
 
 		// existe, defino el html de la sección
+		const proyectos = DataBase.proyectosSection;
+		let html = "";
 		Object.values(proyectos).forEach((p) => {
 			// obtengo todos los iconos de herramientas usadas
 			let herrameintasUsadas = "";
@@ -40,7 +38,7 @@ export class ProjectsJS {
             <div class="d-none" ${Config.nameDataLang}="lang${h.toUpperCase()}" ${
 					Config.nameDataTooltip
 				}="${h}">...</div>
-            <img class="icon" src="${p.sourceHerramientas}${h}_logo.webp" alt="${h} logo" ${
+            <img loading="lazy" class="icon" src="${p.sourceHerramientas}${h}_logo.webp" alt="${h} logo" ${
 					Config.nameTooltipTarget
 				}="${h}">
           </div>
@@ -56,18 +54,31 @@ export class ProjectsJS {
             target="_blank">
             <div class="d-flex align-items-center">
               <span ${Config.nameDataLang}="langProjectCode">...</span>
-              <img class="icons ml-2" src="/assets/icons/github_icon.webp" alt="Github logo" />
+              <img loading="lazy" class="icons ml-2" src="/assets/icons/github_icon.webp" alt="Github logo" />
             </div>
           </a>
         `;
 			// proyecto privado
+			else if (p.privacy === "private") {
+				htmlSourceCode += `
+					<h4 class="mu-auto p-2 align-self-center bg-red rounded" 
+						${Config.nameDataLang}="langProjectPrivacy">
+						...
+					</h4>
+				`;
+			}
+			// proyecto web (dejar link a la web)
 			else
 				htmlSourceCode += `
-          <h4 class="mu-auto p-2 align-self-center bg-red rounded" 
-            ${Config.nameDataLang}="langProjectPrivacy">
-            ...
-          </h4>
-      `;
+					<a class="btn btn-red p-2 mu-auto align-self-center"
+						href="${p.sourceCodeLink}"
+						target="_blank">
+						<div class="d-flex align-items-center">
+							<span ${Config.nameDataLang}="langProjectWeb">...</span>
+							<img loading="lazy" class="icons ml-2" src="/assets/icons/globalweb_icon.webp" alt="Web logo" />
+						</div>
+					</a>
+				`;
 
 			// creo el HTML
 			const projectState = DataBase.proyectosState[p.state];
@@ -82,7 +93,7 @@ export class ProjectsJS {
             ${htmlSourceCode}
           </div>
           <div class="card-right">
-            <img class="card-img" src="${p.sourceIMG}" alt="${p.altIMG}">
+            <img loading="lazy" class="card-img" src="${p.sourceIMG}" alt="${p.altIMG}">
             <p ${Config.nameDataLang}="langHerrUsadas">...</p>
             <div class="card-actions row">
               ${herrameintasUsadas}

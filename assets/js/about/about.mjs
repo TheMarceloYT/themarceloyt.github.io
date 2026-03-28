@@ -28,18 +28,16 @@ export class AboutJS {
 	 * Define el HTML para la sección de HERRAMIENTAS
 	 */
 	static initHerramientasSection() {
-		// variables
-		const herramientasEl = Utils.doDocumentQuery(this.herramientasElementName);
-		const herramientas = DataBase.herramientasSection;
-		let html = "";
-
 		// existe el elemento?
+		const herramientasEl = Utils.doDocumentQuery(this.herramientasElementName);
 		if (!herramientasEl) {
 			console.log(`[AboutJS] No existe el elemento "${this.herramientasElementName}"`);
 			return;
 		}
 
 		// existe, defino el html de la sección
+		const herramientas = DataBase.herramientasSection;
+		let html = "";
 		Object.values(herramientas).forEach((h) => {
 			const herramientaHTML = `
         <div class="d-none" ${Config.nameDataLang}="${h.dataLang}" ${Config.nameDataTooltip}="${h.dataTooltip}">...</div>
@@ -49,7 +47,7 @@ export class AboutJS {
             alt="${h.altIMG}"
             ${Config.nameTooltipTarget}="${h.tooltipTarget}"
           />
-        `;
+      	`;
 
 			// añado al html que será insertado
 			html += herramientaHTML;
@@ -64,9 +62,8 @@ export class AboutJS {
 	 * @param {Object} certificado - Objeto con la información del certificado
 	 */
 	static initModalOpenListener(certificado) {
-		const certificadoEl = Utils.getElementPorID(certificado.id);
-
 		// existe el elemento?
+		const certificadoEl = Utils.getElementPorID(certificado.id);
 		if (!certificadoEl) {
 			console.log(`[AboutJS] No existe el elemento con ID "${certificado.id}"`);
 			return;
@@ -94,8 +91,9 @@ export class AboutJS {
 		btnOpenModalCert.addEventListener("click", () => {
 			MYTstrap.showModal(modalTitle, modalBody, modalFooter);
 
-			// actualizo lang individual
-			Lang.updateElementLang(certificadoEl.id);
+			// actualizo lang individual del modal
+			const modal = Utils.doDocumentQuery(`#${Config.modalID}`);
+			Lang.updateElementLang(modal.id);
 
 			// activo la img zoomable
 			MYTstrap.initZoomInImgs();
@@ -106,17 +104,16 @@ export class AboutJS {
 	 * Define el HTML para la sección de CERTIFICADOS
 	 */
 	static initCertificadosSection() {
-		const certificadosEl = Utils.doDocumentQuery(this.certificadosElementName);
-		const certificados = DataBase.certificadosSection;
-		let html = "";
-
 		// existe el elemento?
+		const certificadosEl = Utils.doDocumentQuery(this.certificadosElementName);
 		if (!certificadosEl) {
 			console.log(`[AboutJS] No existe el elemento "${this.certificadosElementName}"`);
 			return;
 		}
 
 		// existe, defino html de la sección
+		const certificados = DataBase.certificadosSection;
+		let html = "";
 		Object.values(certificados).forEach((c) => {
 			const certificadoHTML = `
         <div class="d-none" ${Config.nameDataLang}="${c.dataLangIcon}" ${Config.nameDataTooltip}="${c.dataToolTip}">...</div>
@@ -126,6 +123,7 @@ export class AboutJS {
             <div class="d-flex">
               <h3 class="align-self-center" ${Config.nameDataLang}="${c.dataLangTitle}">...</h3>
               <img
+								loading="lazy"
                 class="herramientas-img icon ml-2"
                 src="${c.sourceICON}"
                 alt="${c.altICON}"
@@ -139,6 +137,7 @@ export class AboutJS {
             <button class="btn-img" ${this.aboutBtnModalOpenName}>
               <div class="certificados-img-container">
                 <img
+									loading="lazy"
                   class="certificados-img"
                   src="${c.sourceIMG}"
                   alt="${c.altIMG}"

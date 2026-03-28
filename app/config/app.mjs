@@ -5,7 +5,7 @@
 
 export class Config {
 	// versión de la app
-	static appVersion = "1.0.10";
+	static appVersion = "1.1.65";
 
 	// el lenguaje global de la app
 	static lenguajeGlobal = "es";
@@ -72,4 +72,7 @@ export class Config {
 
 	// nombre designado en storage para el idioma del usuario
 	static nameIdioma = "langUsuario";
+
+	// id del modal global
+	static modalID = "mytstrapModal";
 }

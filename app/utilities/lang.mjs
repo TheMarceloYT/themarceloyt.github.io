@@ -71,7 +71,7 @@ export class Lang {
 			const clave = element.getAttribute(nombreDataLang);
 
 			// definimos el texto del elemento
-			element.textContent = DataBase.translationTextos[this.getLenguajeActualApp()]?.[clave];
+			element.innerHTML = DataBase.translationTextos[this.getLenguajeActualApp()]?.[clave];
 		});
 	}
 
@@ -89,12 +89,12 @@ export class Lang {
 
 		// defino el nombre para los data lang y hago la query
 		const nombreDataLang = Config.nameDataLang;
-		Utils.doDocumentQueryAll(`[${nombreDataLang}]`).forEach((el) => {
+		elemento.querySelectorAll(`[${nombreDataLang}]`).forEach((el) => {
 			// definimos la clave para buscar la traducción dentro del objeto
 			const clave = el.getAttribute(nombreDataLang);
 
 			// definimos el texto del elemento
-			el.textContent = DataBase.translationTextos[this.getLenguajeActualApp()]?.[clave];
+			el.innerHTML = DataBase.translationTextos[this.getLenguajeActualApp()]?.[clave];
 		});
 	}
 
