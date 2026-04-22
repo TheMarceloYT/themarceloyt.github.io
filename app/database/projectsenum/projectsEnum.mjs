@@ -1,0 +1,81 @@
+/**
+ * Base de datos de enumeración de los proyectos
+ * Creado por TheMarceloYT (https://github.com/TheMarceloYT)
+ */
+
+export class ProjectsEnum {
+	static projectsEnumContent = {
+		kompry: {
+			id: "projectKompry",
+			state: "developing",
+			title: "Kompry",
+			dataLangDesc: "langKompryDesc",
+			sourceIMG: "/assets/images/proyectos/soon.webp",
+			altIMG: "Kompry logo",
+			herramientas: ["html", "css", "js", "php", "laravel", "mysql"],
+			sourceHerramientas: "/assets/images/herramientas/",
+			sourceCodeLink: "undefined",
+			privacy: "private",
+		},
+		mk9reborn: {
+			id: "projectMK9Reborn",
+			state: "pending",
+			title: "MK9 REBORN",
+			dataLangDesc: "langMK9Reborn",
+			sourceIMG: "/assets/images/proyectos/mk9reborn.webp",
+			altIMG: "MK9 Reborn logo",
+			herramientas: ["php", "laravel", "mysql", "reverseING", "ghidra"],
+			sourceHerramientas: "/assets/images/herramientas/",
+			sourceCodeLink: "https://github.com/TheMarceloYT/appArtistasUsm_laravel",
+			privacy: "private",
+		},
+		artium: {
+			id: "projectArtium",
+			state: "developing",
+			title: "Artium",
+			dataLangDesc: "langArtiumDesc",
+			sourceIMG: "/assets/images/proyectos/artium_logo.webp",
+			altIMG: "Artium logo",
+			herramientas: ["html", "css", "js", "php", "laravel", "mysql"],
+			sourceHerramientas: "/assets/images/herramientas/",
+			sourceCodeLink: "https://github.com/TheMarceloYT/appArtistasUsm_laravel",
+			privacy: "public",
+		},
+		globi: {
+			id: "projectGlobi",
+			state: "reinventing",
+			title: "Globi",
+			dataLangDesc: "langGlobiDesc",
+			sourceIMG: "/assets/images/proyectos/globi_logo.webp",
+			altIMG: "Globi logo",
+			herramientas: ["dart", "flutter", "firebase"],
+			sourceHerramientas: "/assets/images/herramientas/",
+			sourceCodeLink: "https://github.com/TheMarceloYT/appEventosFlutter_flutter",
+			privacy: "public",
+		},
+		autogestor: {
+			id: "projectAutoGestor",
+			state: "pending",
+			title: "AutoGestor",
+			dataLangDesc: "langAutoGestorDesc",
+			sourceIMG: "/assets/images/proyectos/soon.webp",
+			altIMG: "AutoGestor logo",
+			herramientas: ["java", "mysql"],
+			sourceHerramientas: "/assets/images/herramientas/",
+			sourceCodeLink: "https://github.com/TheMarceloYT/appTallerDeVehiculos_NetBeans",
+			privacy: "public",
+		},
+		taskflow: {
+			id: "projectTaskFlow",
+			state: "pending",
+			title: "TaskFlow",
+			dataLangDesc: "langTaskFlowDesc",
+			sourceIMG: "/assets/images/proyectos/soon.webp",
+			altIMG: "TaskFlow logo",
+			herramientas: ["csharp", "puntoNET"],
+			sourceHerramientas: "/assets/images/herramientas/",
+			sourceCodeLink: "https://github.com/TheMarceloYT/appTareasPendientes_NET",
+			privacy: "public",
+		},
+	};
+}

@@ -51,8 +51,14 @@
 	--cert-img-width: calc((var(--responsive-add) / 4.5));
 	--cert-img-height: calc((var(--responsive-add) / 12));
 	--zoomable-imgs-transition: transform 0.3s ease;
+	--offcanvas-transition: transform 0.3s ease;
+	--tooltip-transition: opacity 0.2s ease, transform 0.2s ease;
+	--pfp-transition: transform 1s ease-in-out;
+	--modal-backdrop-transition: opacity 0.2s ease;
+	--offcanvas-backdrop-transition: opacity 0.3s ease-in-out;
 	--zoomable-imgs-background-color: var(--offcanvas-backdrop-color);
 	--dropdown-line-height: calc((var(--responsive-add) / 80));
+	--btn-icon-img-width: calc(var(--responsive-add) / 100);
 	/* VARS CONSTANTES [FIN] */
 
 	--bg-color: #ffffff;
@@ -242,6 +248,7 @@ dropdown .dropdown-toggle {
 	background-color: transparent;
 	color: var(--color-white);
 	cursor: pointer;
+	width: max-content;
 }
 
 .dropdown-menu button.active {
@@ -254,12 +261,7 @@ dropdown .dropdown-toggle {
 }
 
 dropdown .dropdown-toggle img {
-	width: calc(var(--responsive-add) / 52);
-	height: auto;
-}
-
-#dropdown-idioma-img {
-	width: calc(var(--responsive-add) / 65);
+	width: calc(var(--responsive-add) / 45);
 	height: auto;
 }
 
@@ -360,7 +362,7 @@ dropdown.open .dropdown-menu {
 	opacity: 0;
 	transform: translate(-50%, -120%);
 	pointer-events: none;
-	transition: opacity 0.2s ease, transform 0.2s ease;
+	transition: var(--tooltip-transition);
 	z-index: var(--tooltip-z-index);
 }
 
@@ -401,7 +403,7 @@ dropdown.open .dropdown-menu {
 	width: 100%;
 	height: 100%;
 	transform-style: preserve-3d;
-	transition: transform 1s ease-in-out;
+	transition: var(--pfp-transition);
 }
 
 .pfp-front,
@@ -472,7 +474,7 @@ dropdown.open .dropdown-menu {
 	background-color: var(--offcanvas-backdrop-color);
 	z-index: calc(var(--modal-z-index) - 2);
 	opacity: 0;
-	transition: opacity 0.2s ease;
+	transition: var(--modal-backdrop-transition);
 }
 
 .mytstrap-modal-backdrop.show {
@@ -618,6 +620,12 @@ dropdown.open .dropdown-menu {
 	animation: spin 1s linear infinite;
 }
 
+.btn-icon-img {
+	max-width: var(--btn-icon-img-width);
+	width: 100%;
+	height: auto;
+}
+
 /* WIDGETS [FIN] */
 
 .border {
@@ -651,6 +659,10 @@ dropdown.open .dropdown-menu {
 
 .bg-transparent {
 	background-color: transparent !important;
+}
+
+.bg-red {
+	background-color: var(--color-red) !important;
 }
 
 .justify-items-center {
@@ -917,6 +929,11 @@ dropdown.open .dropdown-menu {
 	margin-right: 12px !important;
 }
 
+.my-auto {
+	margin-top: auto !important;
+	margin-bottom: auto !important;
+}
+
 .my-1 {
 	margin-top: 2px !important;
 	margin-bottom: 2px !important;
@@ -1064,6 +1081,11 @@ dropdown.open .dropdown-menu {
 .px-4 {
 	padding-left: 12px !important;
 	padding-right: 12px !important;
+}
+
+.py-auto {
+	padding-top: auto !important;
+	padding-bottom: auto !important;
 }
 
 .py-1 {
@@ -1228,7 +1250,7 @@ hr {
 	background-color: var(--color-red);
 	background-clip: padding-box;
 	outline: 0;
-	transition: transform 0.3s ease-in-out;
+	transition: var(--offcanvas-transition);
 }
 
 .offcanvas.show {
@@ -1246,7 +1268,7 @@ hr {
 	z-index: calc(var(--offcanvas-z-index) - 1);
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity 0.3s ease-in-out;
+	transition: var(--offcanvas-backdrop-transition);
 }
 
 .offcanvas-backdrop.show {
@@ -1686,17 +1708,6 @@ hr {
 		border-top-left-radius: var(--profile-border-radius);
 		border-bottom-left-radius: var(--profile-border-radius);
 	}
-
-	.profile-sm-info-data {
-		border-top-right-radius: var(--profile-border-radius);
-		border-bottom-right-radius: var(--profile-border-radius);
-		border-bottom-left-radius: var(--profile-border-radius);
-	}
-
-	.profile-sm-info h2 {
-		border-top-left-radius: var(--profile-border-radius);
-		border-top-right-radius: var(--profile-border-radius);
-	}
 }
 
 @media (min-width: 768px) {
@@ -1942,17 +1953,6 @@ hr {
 		border-radius: 0;
 		border-top-left-radius: var(--profile-border-radius);
 		border-bottom-left-radius: var(--profile-border-radius);
-	}
-
-	.profile-md-info-data {
-		border-top-right-radius: var(--profile-border-radius);
-		border-bottom-right-radius: var(--profile-border-radius);
-		border-bottom-left-radius: var(--profile-border-radius);
-	}
-
-	.profile-md-info h2 {
-		border-top-left-radius: var(--profile-border-radius);
-		border-top-right-radius: var(--profile-border-radius);
 	}
 }
 
@@ -2454,17 +2454,6 @@ hr {
 		border-top-left-radius: var(--profile-border-radius);
 		border-bottom-left-radius: var(--profile-border-radius);
 	}
-
-	.profile-xl-info-data {
-		border-top-right-radius: var(--profile-border-radius);
-		border-bottom-right-radius: var(--profile-border-radius);
-		border-bottom-left-radius: var(--profile-border-radius);
-	}
-
-	.profile-xl-info h2 {
-		border-top-left-radius: var(--profile-border-radius);
-		border-top-right-radius: var(--profile-border-radius);
-	}
 }
 
 @media (min-width: 1400px) {
@@ -2710,17 +2699,6 @@ hr {
 		border-radius: 0;
 		border-top-left-radius: var(--profile-border-radius);
 		border-bottom-left-radius: var(--profile-border-radius);
-	}
-
-	.profile-xxl-info-data {
-		border-top-right-radius: var(--profile-border-radius);
-		border-bottom-right-radius: var(--profile-border-radius);
-		border-bottom-left-radius: var(--profile-border-radius);
-	}
-
-	.profile-xxl-info h2 {
-		border-top-left-radius: var(--profile-border-radius);
-		border-top-right-radius: var(--profile-border-radius);
 	}
 }
 

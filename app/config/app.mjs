@@ -5,7 +5,7 @@
 
 export class Config {
 	// versión de la app
-	static appVersion = "1.1.65";
+	static appVersion = "1.2.25";
 
 	// el lenguaje global de la app
 	static lenguajeGlobal = "es";
@@ -53,7 +53,7 @@ export class Config {
 	static viewsURL = "/app/views/";
 
 	// correo de negocios
-	static businessMail = "themarceloitinegocios@gmail.com";
+	static businessMail = "vazquex.oficial@gmail.com";
 
 	// container maestro de la app
 	static mainContainer = document.querySelector("main");
@@ -75,4 +75,10 @@ export class Config {
 
 	// id del modal global
 	static modalID = "mytstrapModal";
+
+	// link hacia los iconos de lang (pensado para ser utilizado dentro de app/)
+	static langIconURL = "/assets/icons/lang/";
+
+	// link hacia los iconos de theme (pensado para ser utilizado dentro de app/)
+	static themeIconURL = "/assets/icons/themes/";
 }

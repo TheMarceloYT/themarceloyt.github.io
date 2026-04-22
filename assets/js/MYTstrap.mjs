@@ -18,6 +18,7 @@ export class MYTstrap {
 	static modalDataButtonOpen = "data-modal-open";
 	static modal = null;
 	static zoomableImgClass = "zoomable";
+	static menuViewsID = "menu-views";
 	/* VARIABLES GLOBALES [FIN] */
 
 	/* FUNCIONES REUTILIZABLES [INICIO] */
@@ -40,6 +41,23 @@ export class MYTstrap {
 	 * @param {String} elementoHTML - Elemento a buscar
 	 */
 	static buscarElementoHTML = (elementoHTML) => document.querySelector(`${elementoHTML}`);
+
+	/**
+	 * Cierra el offcanvas desplegable
+	 */
+	static closeOffcanvas() {
+		const offcanvas = this.buscarElementoHTML(`.${this.mainOffcanvasClase}`);
+		const backdrop = this.buscarElementoHTML(`.${this.MainOffcanvasBackdropClase}`);
+
+		// cerramos offcanvas (si existe)
+		if (offcanvas) offcanvas.classList.remove("show");
+
+		// elimino el backdrop (si existe)
+		if (backdrop) backdrop.remove();
+
+		// restaurar scroll del body
+		document.body.style.overflow = "";
+	}
 
 	/* FUNCIONES REUTILIZABLES [FIN] */
 
@@ -80,19 +98,12 @@ export class MYTstrap {
 
 		// cerrar offcanvas
 		document.querySelectorAll(`[data-bs-dismiss="${this.mainOffcanvasClase}"]`).forEach((closeBtn) => {
-			closeBtn.addEventListener("click", () => {
-				const offcanvas = closeBtn.closest(`.${this.mainOffcanvasClase}`);
-				const backdrop = this.buscarElementoHTML(`.${this.MainOffcanvasBackdropClase}`);
+			closeBtn.addEventListener("click", () => this.closeOffcanvas());
+		});
 
-				// cerramos offcanvas (si existe)
-				if (offcanvas) offcanvas.classList.remove("show");
-
-				// elimino el backdrop (si existe)
-				if (backdrop) backdrop.remove();
-
-				// restaurar scroll del body
-				document.body.style.overflow = "";
-			});
+		// cerrar offcanvas cuando se clickea un link a una vista
+		document.querySelectorAll(`#${this.menuViewsID} a`).forEach((btn) => {
+			btn.addEventListener("click", () => this.closeOffcanvas());
 		});
 	}
 

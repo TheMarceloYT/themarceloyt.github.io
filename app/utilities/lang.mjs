@@ -9,12 +9,13 @@ import { Config } from "../config/app.mjs";
 // utilities de la app
 import { Utils } from "./utilities.mjs";
 
-// Base de datos de la app
+// base de datos de la app
 import { DataBase } from "../database/database.mjs";
 
 export class Lang {
 	// variables
 	static dropdownIdiomaId = "dropdown-idioma";
+	static dropdownIdiomaImgID = "dropdown-lang-img";
 
 	/**
 	 * Comprueba si el lang recibido es soportado por la app
@@ -28,10 +29,17 @@ export class Lang {
 	 */
 	static markActiveLang(langSelected) {
 		const dropdownIdioma = Utils.getElementPorID(this.dropdownIdiomaId);
+		const dropdownIdiomaImg = Utils.getElementPorID(this.dropdownIdiomaImgID);
 
 		// no existe el dropdown?
 		if (!dropdownIdioma) {
 			console.log(`[Lang] Dropdown idioma NO existe`);
+			return;
+		}
+
+		// no existe el dropdown img?
+		if (!dropdownIdiomaImg) {
+			console.log(`[Lang] La imagen del dropdown idioma NO existe`);
 			return;
 		}
 
@@ -43,6 +51,9 @@ export class Lang {
 		if (btnSelected) btnSelected.classList.add("active");
 		// no existe el botón
 		else console.log(`[Lang] Botón idioma para "${langSelected}" NO existe`);
+
+		// cambiamos el icono del dropdown lang al seleccionado
+		dropdownIdiomaImg.src = DataBase.langFlags[langSelected];
 	}
 
 	/**
@@ -162,6 +173,10 @@ export class Lang {
 				// guardo y aplico el nuevo idioma
 				Lang.saveIdioma(nuevoIdioma);
 				Lang.applyIdioma(Lang.detectIdioma());
+
+				// escondo el dropdown
+				const dropdownIdioma = btnIdioma.closest("dropdown");
+				dropdownIdioma.classList.remove("open");
 
 				// escondo loader
 				Utils.handleMasterLoader("hide");

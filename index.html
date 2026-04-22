@@ -69,12 +69,28 @@
 							<!-- DROPDOWN IDOMA [INICIO] -->
 							<dropdown>
 								<button class="dropdown-toggle">
-									<img src="assets/icons/lang_icon.webp" alt="Idioma" />
+									<img id="dropdown-lang-img" src="assets/icons/lang_icon.webp" alt="Idioma" />
 								</button>
 								<div class="dropdown-menu" id="dropdown-idioma">
 									<!-- Aquí los idiomas de la app -->
-									<button data-lang="langBtnEs" data-lang-selected="es">...</button>
-									<button data-lang="langBtnEn" data-lang-selected="en">...</button>
+
+									<!-- BTN ES [INICIO] -->
+									<button data-lang-selected="es">
+										<div class="d-flex align-items-center">
+											<img class="btn-icon-img" src="assets/icons/lang/spain_flag_icon.webp" alt="Bandera ES" />
+											<div class="ml-1" data-lang="langBtnEs">...</div>
+										</div>
+									</button>
+									<!-- BTN ES [FIN] -->
+
+									<!-- BTN EN [INICIO] -->
+									<button data-lang-selected="en">
+										<div class="d-flex align-items-center">
+											<img class="btn-icon-img" src="assets/icons/lang/usa_flag_icon.webp" alt="Bandera EN" />
+											<div class="ml-1" data-lang="langBtnEn">...</div>
+										</div>
+									</button>
+									<!-- BTN EN [FIN] -->
 								</div>
 							</dropdown>
 							<!-- DROPDOWN IDOMA [FIN] -->
@@ -87,8 +103,32 @@
 								<div class="dropdown-menu" id="dropdown-theme">
 									<!-- Aquí los temas de la app -->
 									<!-- <button data-lang="themeAuto" data-theme="auto">...</button> -->
-									<button data-lang="langThemeLight" data-theme="light">...</button>
-									<button data-lang="langThemeDark" data-theme="dark">...</button>
+
+									<!-- BTN LIGHT THEME [INICIO] -->
+									<button data-theme="light">
+										<div class="d-flex align-items-center">
+											<img
+												class="btn-icon-img rounded bg-red"
+												src="assets/icons/themes/light_theme_icon.webp"
+												alt="Tema claro"
+											/>
+											<div class="ml-1" data-lang="langThemeLight">...</div>
+										</div>
+									</button>
+									<!-- BTN LIGHT THEME [FIN] -->
+
+									<!-- BTN DARK THEME [INICIO] -->
+									<button data-theme="dark">
+										<div class="d-flex align-items-center">
+											<img
+												class="btn-icon-img rounded bg-red"
+												src="assets/icons/themes/dark_theme_icon.webp"
+												alt="Tema oscuro"
+											/>
+											<div class="ml-1" data-lang="langThemeDark">...</div>
+										</div>
+									</button>
+									<!-- BTN DARK THEME [FIN] -->
 								</div>
 							</dropdown>
 							<!-- DROPDOWN TEMA [FIN] -->

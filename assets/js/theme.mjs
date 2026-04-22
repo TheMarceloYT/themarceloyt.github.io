@@ -9,10 +9,14 @@ import { Config } from "../../app/config/app.mjs";
 // utilidades de la app
 import { Utils } from "../../app/utilities/utilities.mjs";
 
+// base de datos de la app
+import { DataBase } from "../../app/database/database.mjs";
+
 export class Theme {
 	// defino puntero al document
 	static html = document.documentElement;
 	static dropdownTemaId = "dropdown-theme";
+	static dropdownTemaImgID = "dropdown-theme-img";
 
 	/**
 	 * Da el tema guardado del usuario en Local Storage
@@ -25,10 +29,17 @@ export class Theme {
 	 */
 	static markActiveTheme(themeSelected) {
 		const dropdownTheme = Utils.getElementPorID(this.dropdownTemaId);
+		const dropdownIdiomaImg = Utils.getElementPorID(this.dropdownTemaImgID);
 
 		// no existe el dropdown?
 		if (!dropdownTheme) {
 			console.log(`[Theme] Dropdown tema NO existe`);
+			return;
+		}
+
+		// no existe la imagen para el dropdown?
+		if (!dropdownIdiomaImg) {
+			console.log(`[Theme] Imagen para dropdown tema NO existe`);
 			return;
 		}
 
@@ -40,6 +51,9 @@ export class Theme {
 		if (btnSelected) btnSelected.classList.add("active");
 		// no existe el botón
 		else console.log(`[Theme] Botón tema para "${themeSelected}" NO existe`);
+
+		// cambiamos el icono del dropdown theme al seleccionado
+		dropdownIdiomaImg.src = DataBase.themeFlags[themeSelected];
 	}
 
 	/**
@@ -90,6 +104,10 @@ export class Theme {
 				// almaceno el tema elegido en el storage y cambio el tema
 				Utils.setStorageItem(Config.nameTema, nuevoTema);
 				Theme.setTema(Theme.getTemaPreferido());
+
+				// escondo el dropdown
+				const dropdownTheme = btnTema.closest("dropdown");
+				dropdownTheme.classList.remove("open");
 			}
 			// no existe el botón
 			else console.log(`[Theme] Botón tema NO existe`);
